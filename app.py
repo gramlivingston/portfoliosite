@@ -15,7 +15,8 @@ def before_request():
 
 @app.route('/')
 def index():
-    return render_template('index.html', project='About')
+    prjt = 'About'
+    return render_template('index.html', project=prjt)
 
 
 @app.route('/project')
