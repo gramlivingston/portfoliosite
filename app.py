@@ -15,16 +15,11 @@ def before_request():
 
 @app.route('/')
 def index():
-    if flask.request.method == 'POST':
-        username = flask.request.values.get('bttnlink')
-        print(username)
-        return render_template('index.html', prjt=username)
-    else:
     return render_template('index.html')
 
 
 @app.route('/project')
 def project():
-    cp = (request.args.get('value'))
-    print(cp)
-    return render_template('index.html', prjt=cp)
+    username = flask.request.values.get('bttnlink')
+    print(f'username = {username}')
+    return render_template('index.html', prjt=username)
