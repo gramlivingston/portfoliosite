@@ -34,6 +34,15 @@
     
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
+
+    <!-- Include jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script> 
+    $(function(){
+      $("#includedContent").load("Field_Interactions.html"); 
+    });
+    </script> 
   </head>
   <body>
     
@@ -146,6 +155,7 @@
 
       <p> Here goes the project text. Here goes the project text.Here goes the project text.Here goes the project text.Here goes the project text. </p>
       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <div id="includedContent"></div>
 
       <h2>Section title</h2>
       <div class="table-responsive">
