@@ -14,11 +14,13 @@ def before_request():
         
 
 @app.route('/')
-def index():
+def index():        
+
     return render_template('index.html')
 
 
-@app.route('/field')
-def walk():
-    
-    return render_template('index.html', prjt=fieldinteractions)
+@app.route('/project')
+def project():
+    cp = (request.args.get('value'))
+    print(cp)
+    return render_template('index.html', prjt=cp)
