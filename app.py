@@ -18,7 +18,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/walk')
+@app.route('/field')
 def walk():
     
-    return render_template('walk.html', lat=userlat, lng=userlng, clr = color, step=step, text=text, clrc=colorcount)
+    return render_template('index.html', prjt=fieldinteractions)
