@@ -15,11 +15,11 @@ def before_request():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', project='About')
 
 
 @app.route('/project')
 def project():
-    username = flask.request.values.get('bttnlink')
+    prjt = f'{flask.request.values.get('bttnlink')}'
     print(f'username = {username}')
-    return render_template('index.html', prjt=username)
+    return render_template('index.html', project=prjt)
