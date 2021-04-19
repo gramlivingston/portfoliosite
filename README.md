@@ -1,2 +1,2 @@
-# portfoliosite
+# portfolio site
 Artist Portfolio Website
