@@ -14,8 +14,12 @@ def before_request():
         
 
 @app.route('/')
-def index():        
-
+def index():
+    if flask.request.method == 'POST':
+        username = flask.request.values.get('bttnlink')
+        print(username)
+        return render_template('index.html', prjt=username)
+    else:
     return render_template('index.html')
 
 
