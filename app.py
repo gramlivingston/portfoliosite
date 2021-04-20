@@ -21,5 +21,5 @@ def index():
 @app.route('/project')
 def project():
     prjt = flask.request.values.get('btnlink')
-    print(f'username = {prjt}')
+    print(f'project = {prjt}')
     return render_template('index.html', project=prjt)
