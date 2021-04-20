@@ -23,7 +23,7 @@ def index():
  
 
 @app.route('/projects/<title>')
-def project(title):
+def projects(title):
     title = request.args['title']
     #child = title
     imgnum = 2
