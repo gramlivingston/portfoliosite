@@ -22,7 +22,7 @@ def index():
 
  
 
-@app.route('/project/<title>')
+@app.route('/projects/<title>')
 def project(title):
     title = request.args['title']
     #child = title
