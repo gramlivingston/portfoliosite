@@ -24,8 +24,10 @@ def index():
 
  
 
-@app.route('/project/<project>)
-def project(project):
-    project = project
+@app.route('/project/<title>)
+def project(title):
+    title = request.args['title']
+    #child = title
+    imgnum = 2
     print(f'project{project}')
-    return render_template('projects.html', project=prjt)
+    return render_template('projects.html', project=title, imn = imgnum)
