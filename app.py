@@ -13,18 +13,16 @@ def before_request():
         return redirect(url, code=code)
         
 
-@app.route('/', methods = ['POST', 'GET'])
+@app.route('/', methods = ['GET'])
 def index():
-    if request.method == 'POST':
-        prjt = request.form['btnlink']
-        return redirect(url_for('project',project = prjt))
+
     if request.method == 'GET':
         prjt = 'About'
         return render_template('index.html', project=prjt)
 
  
 
-@app.route('/project/<title>)
+@app.route('/project/<title>')
 def project(title):
     title = request.args['title']
     #child = title
