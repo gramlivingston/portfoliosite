@@ -17,14 +17,15 @@ def before_request():
 def index():
     if request.method == 'POST':
         prjt = request.form['btnlink']
-        return render_template('projects.html', project=prjt)
+        return redirect(url_for('project',project = prjt))
     if request.method == 'GET':
         prjt = 'About'
         return render_template('index.html', project=prjt)
 
+ 
 
-@app.route('/projects')
-def project():
-    prjt = request.form['btnlink']
-    print(f'project = {prjt}')
-    return render_template('index.html', project=prjt)
+@app.route('/project/<project>)
+def project(project):
+    project = project
+    print(f'project{project}')
+    return render_template('projects.html', project=prjt)
