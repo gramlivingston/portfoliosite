@@ -27,5 +27,5 @@ def project(title):
     title = request.args['title']
     #child = title
     imgnum = 2
-    print(f'project{project}')
-    return render_template('projects.html', project=title, imn = imgnum)
+    print(f'project{title}')
+    return render_template('projects.html', project=title)
