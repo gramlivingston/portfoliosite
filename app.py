@@ -17,14 +17,14 @@ def before_request():
 def index():
     if request.method == 'POST':
         prjt = request.form['btnlink']
-        return render_template('index.html', project=prjt)
+        return render_template('projects.html', project=prjt)
     if request.method == 'GET':
         prjt = 'About'
         return render_template('index.html', project=prjt)
 
 
-@app.route('/project')
+@app.route('/projects')
 def project():
-    prjt = flask.request.values.get('btnlink')
+    prjt = request.form['btnlink']
     print(f'project = {prjt}')
     return render_template('index.html', project=prjt)
