@@ -13,9 +13,14 @@ def before_request():
         return redirect(url, code=code)
         
 
-@app.route('/')
+@app.route('/', methods = ['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        prjt = request.form['btnlink']
+        return render_template('index.html', project=prjt)
+    if request.method == 'GET':
+        prjt = 'About'
+        return render_template('index.html', project=prjt)
 
 
 @app.route('/project')
