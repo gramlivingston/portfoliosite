@@ -22,7 +22,7 @@ def index():
 
  
 
-@app.route('/projects/<title>')
+@app.route('projects/<title>' methods=['GET'])
 def projects(title):
     title = request.args['title']
     #child = title
